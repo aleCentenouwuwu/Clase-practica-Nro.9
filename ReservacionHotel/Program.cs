@@ -19,6 +19,7 @@ namespace ReservacionHotel
                 Console.WriteLine("2. Consultar reservacion");
                 Console.WriteLine("3. Cancelar reservacion");
                 Console.WriteLine("4. Salir del menu");
+                Console.WriteLine("-------------------------------------");
                 byte opc = Convert.ToByte(Console.ReadLine());
 
                 switch (opc)
