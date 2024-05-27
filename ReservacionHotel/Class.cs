@@ -25,8 +25,8 @@ namespace ReservacionHotel
            
             Console.WriteLine(">> Cancelar reservacion");
             Console.WriteLine("¿Su reservación es la siguiente?");
-            Console.WriteLine($"Nombre del huesped: {this.nombre}.");
-            Console.WriteLine($"Numero habitacion: {this.numerohabitacion}");
+            Console.WriteLine($"Nombre del huesped: {nombre}.");
+            Console.WriteLine($"Numero habitacion: {numerohabitacion}");
             Console.WriteLine("");
             Console.WriteLine("1. Si");
             Console.WriteLine("2. No");
@@ -60,9 +60,10 @@ namespace ReservacionHotel
                 Console.ReadKey();
             }
         }
-        public void ConsultarReservacion(bool Verificacion)
+       public bool ConsultarReservacion(bool Verif)
         {
-            if(Verificacion == true)
+            
+            if(Verif == true)
             {
                 Console.WriteLine($"La habitacion {numerohabitacion} esta reservada por {nombre}");
 
@@ -71,7 +72,7 @@ namespace ReservacionHotel
             {
                 Console.WriteLine("No hay reservacion a su nombre");
             }
-          
+            return true;
         }
     }
 }

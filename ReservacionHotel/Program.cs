@@ -36,8 +36,7 @@ namespace ReservacionHotel
                         break;
                     case 2:
                         Console.Clear();
-                      
-                        //Consultar.ConsultarReservacion();
+                        reservacion.ConsultarReservacion();
                         break;
                     case 3:
                         Console.Clear();
@@ -46,11 +45,12 @@ namespace ReservacionHotel
                         break;
                     case 4:
                         Console.Clear();
-                        Console.WriteLine("ly ");
+                        Console.WriteLine("lysm uwu");
                         Salir = true;
                         Console.ReadKey();
                         break;
                     default:
+                        Console.WriteLine("Opcion no valida, intente de nuevo");
                         break;
 
 
