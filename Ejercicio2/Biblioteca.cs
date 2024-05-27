@@ -14,12 +14,12 @@ namespace Ejercicio2
         public string libro;
 
         //Matrix            Libro                       Estado      
-        string[,] Libros = { {"Cien anos de soledad" },{"Libre"}};
+        string[,] Libros = { {"Cien anos de soledad", "Libre" },{"Kimetsu no Yaiba","Libre"}};
 
         //Acciones
         public bool Consultar()
         {
-            for (int i = 0; i < Libros.Length; i++)
+            for (int i = 0; i < 2; i++)
             {
                 if (Libros[i, 0] == libro && Libros[i, 1] == "Libre")
                 {
@@ -36,7 +36,7 @@ namespace Ejercicio2
         }
         public void Prestar()
         {
-            for (int i = 0; i < Libros.Length; i++)
+            for (int i = 0; i < 2; i++)
             {
                 if (Libros[i, 0] == libro)
                 {
@@ -46,7 +46,7 @@ namespace Ejercicio2
         }
         public void Devolver()
         {
-            for (int i = 0; i < Libros.Length; i++)
+            for (int i = 0; i < 2; i++)
             {
                 if (Libros[i, 0] == libro)
                 {
