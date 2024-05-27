@@ -10,6 +10,10 @@ namespace ReservacionHotel
     {
         static void Main(string[] args)
         {
+
+            // El error es que creaban un objeto por cada accion, entonces recuerden que solo es un objeto 
+            // es el que tiene su informacion, si crean otro este estara en blanco
+            ReservacionHotel reservacion = new ReservacionHotel();  
             bool Salir = false;
             do
             {
@@ -26,20 +30,19 @@ namespace ReservacionHotel
                 {
                     case 1:
                         Console.Clear();
-                        ReservacionHotel Hacer = new ReservacionHotel();
-                        Hacer.HacerReservacion();
-                        Hacer.nombre = "Norvin";
-                        Hacer.numerohabitacion =1;
+                       
+                        reservacion.HacerReservacion();
+                       
                         break;
                     case 2:
                         Console.Clear();
-                        ReservacionHotel Consultar = new ReservacionHotel();
+                      
                         //Consultar.ConsultarReservacion();
                         break;
                     case 3:
                         Console.Clear();
-                        ReservacionHotel Cancelar = new ReservacionHotel();
-                        Cancelar.CancelarReservacion();
+                      
+                        reservacion.CancelarReservacion();
                         break;
                     case 4:
                         Console.Clear();
