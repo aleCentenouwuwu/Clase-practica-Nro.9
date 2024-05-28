@@ -13,24 +13,31 @@ namespace Ejercicio2
         public string usuario;
         public string libro;
 
-        //Matrix            Libro                       Estado      
-        string[,] Libros = { {"Cien anos de soledad", "Libre" },{"Kimetsu no Yaiba","Libre"}};
+        //Matrices   
+        string[] Libros = {"Laurel", "Azul", "Biblia", "Diccionario", "Buscando sentido"};
+        bool[] Disponible = { true, true, true, true, true };
+        string[] Usuarios = { "", "", "", "", "" };
+
 
         //Acciones
         public bool Consultar()
         {
-            for (int i = 0; i < 2; i++)
+            bool disponible1 = false;
+            for (int i = 0; i < Libros.Length; i++)
             {
-                if (Libros[i, 0] == libro && Libros[i, 1] == "Libre")
+                if (Libros[i] == libro && Disponible[i] == true)
                 {
                     Console.WriteLine("Libro Disponible");
                     return true;
                 }
                 else
                 {
-                    Console.WriteLine("Libro Indisponible");
-                    break;
+                    disponible1 = false;
                 }
+            }
+            if (disponible1 == false)
+            {
+                Console.WriteLine("Libro Inexistente");
             }
             return false;
         }
@@ -38,22 +45,47 @@ namespace Ejercicio2
         {
             for (int i = 0; i < 2; i++)
             {
-                if (Libros[i, 0] == libro)
+                if (Libros[i] == libro)
                 {
-                    Libros[i, 1] = "Prestado";
+                    Disponible[i] = false;
                 }
+                Usuarios[i] = usuario;
+                
             }
+            Console.WriteLine("Libro prestado");
+            Console.ReadKey();
+            Console.Clear();
         }
-        public void Devolver()
+        public bool Devolver()
         {
-            for (int i = 0; i < 2; i++)
+            bool coincideUsuario = true;
+            bool coincideLibro = true;
+
+            for (int i = 0; i < Libros.Length; i++)
             {
-                if (Libros[i, 0] == libro)
+                if (Libros[i] == libro && Usuarios[i] == usuario)
                 {
-                    Libros[i, 1] = "Libre";
+                    Disponible[i] = true;
+                    return true;
+                }
+                if (Usuarios[i] != usuario)
+                {
+                    coincideUsuario = false;
+                }
+                if (Libros[i] != libro)
+                {
+                    coincideLibro = false;
                 }
             }
+            if (coincideLibro == false)
+            {
+                Console.WriteLine("Usted no prestó ese libro");
+            }
+            if (coincideUsuario == false)
+            {
+                Console.WriteLine("Los usuarios no coiciden");
+            }
+            return false;
         }
     }
 }
-
